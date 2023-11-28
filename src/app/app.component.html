@@ -39,13 +39,13 @@
         id="inProgress"
         class="list"
         #inProgressList="cdkDropList"
-        [cdkDropListData]="inProgess"
+        [cdkDropListData]="inProgress"
         [cdkDropListConnectedTo]="[todoList, doneList]"
         (cdkDropListDropped)="drop($event)"
       >
-        <p class="empty-label" *ngIf="inProgess.length === 0">Empty List</p>
+        <p class="empty-label" *ngIf="inProgress.length === 0">Empty List</p>
         <app-task
-          *ngFor="let task of inProgess"
+          *ngFor="let task of inProgress"
           [task]="task"
           cdkDrag
           (edit)="editTask('inProgress', $event)"
